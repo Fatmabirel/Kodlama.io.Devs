@@ -1,0 +1,18 @@
+﻿using Domain.Entities;
+using FluentValidation;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Application.Features.ProgrammingLanguages.Commands
+{
+    public class CreateProgrammingLanguageCommandValidator : AbstractValidator<CreateProgrammingLanguageCommand> 
+    {
+        public CreateProgrammingLanguageCommandValidator()
+        {
+            RuleFor(p=>p.Name).NotEmpty(); //programming language name cannot be null
+        }
+    }
+}

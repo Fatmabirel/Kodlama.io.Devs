@@ -1,9 +1,12 @@
+using Application;
+using Persistence;
+using Core.CrossCuttingConcerns.Exceptions;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
+builder.Services.AddApplicationServices(); // add application services
+builder.Services.AddPersistenceServices(builder.Configuration); //add persistence services
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -15,6 +18,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+//if (app.Environment.IsProduction())
+  // app.ConfigureCustomExceptionMiddleware();
 
 app.UseAuthorization();
 
