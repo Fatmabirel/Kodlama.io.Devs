@@ -18,6 +18,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Folder Include="Features\SocialMediaAddresses\Constants\" />
+	  <Folder Include="Features\SocialMediaAddresses\Rules\" />
 	  <Folder Include="Features\Technologies\Constants\" />
 	  <Folder Include="Features\Technologies\Rules\" />
 	</ItemGroup>

@@ -17,6 +17,7 @@ namespace Persistence
                                                          configuration.GetConnectionString("DevsConnectionString")));
             services.AddScoped<IProgrammingLanguageRepository, ProgrammingLanguageRepository>();
             services.AddScoped<ITechnologyRepository, TechnologyRepository>();
+            services.AddScoped<ISocialMediaAddressRepository, SocialMediaAddressRepository>();
             return services;
         }
     }
