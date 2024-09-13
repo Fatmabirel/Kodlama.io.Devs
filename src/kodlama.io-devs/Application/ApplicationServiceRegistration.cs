@@ -5,6 +5,9 @@ using MediatR;
 using Core.Application.Pipelines.Validation;
 using FluentValidation;
 using Application.Features.ProgrammingLanguages.Rules;
+using Application.Features.Auths.Rules;
+using Application.Services.AuthServices;
+using Core.Security.JWT;
 
 namespace Application
 {
@@ -21,6 +24,10 @@ namespace Application
             services.AddMediatR(Assembly.GetExecutingAssembly());
 
             services.AddScoped<ProgrammingLanguageBusinessRules>();
+            services.AddScoped<AuthBusinessRules>();
+
+            services.AddScoped<IAuthService, AuthManager>();
+            services.AddScoped<ITokenHelper, JwtHelper>();
 
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
