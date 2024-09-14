@@ -19,6 +19,7 @@
 
 	<ItemGroup>
 	  <Folder Include="Features\Auths\Profiles\" />
+	  <Folder Include="Features\OperationClaims\Constants\" />
 	  <Folder Include="Features\SocialMediaAddresses\Constants\" />
 	  <Folder Include="Features\SocialMediaAddresses\Rules\" />
 	  <Folder Include="Features\Technologies\Constants\" />
